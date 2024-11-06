@@ -1,0 +1,28 @@
+﻿@model DetailsBookViewModel
+
+@{
+    ViewBag.Title = "Book Details";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="row">
+    <div class="card mb-3">
+        <img src="@Model.ImageUrl" class="card-img-top img-fluid" style="max-height: 200px; object-fit: contain;" alt="Game Image">
+        <div class="card-body">
+            <h4 class="card-title">Title: @Model.Title</h4>
+            <h5 class="card-title">Author: @Model.Author</h5>
+            <p class="card-text">Additional Information: @Model.Description</p>
+            <p class="card-text"><small class="text-muted">Rating: @Model.Rating</small></p>
+            <p class="card-text"><small class="text-muted">Category: @Model.Category</small></p>
+        </div>
+
+        <a asp-controller="Book" asp-action="Mine" class="btn btn-warning btn-dark-text btn-rounded mb-2 w-100 p-3 fw-bold">Back to my books</a>
+
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
